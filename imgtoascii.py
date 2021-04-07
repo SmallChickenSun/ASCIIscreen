@@ -60,8 +60,10 @@ count = 0
 
 f = open('data.txt', 'w', encoding='utf8')
 
-widht = 480 / 174
-height = 360 / 55
+img_width, img_height = Image.open('image/frame_0.jpg').size
+
+widht = img_width / 174
+height = img_height / 55
 
 for i in range(len(os.listdir("image"))):
     filename = f"frame_{i}.jpg"
