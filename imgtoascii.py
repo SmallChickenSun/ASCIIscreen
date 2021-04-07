@@ -8,8 +8,8 @@ from PIL import Image
 def crop(input, width, height):
     frame = list()
     im = Image.open(input)
-    for i in range(44):
-        for j in range(147):
+    for i in range(55):
+        for j in range(174):
             x = width * j
             y = height * i
             box = (x, y, x + width, y + height)
@@ -39,21 +39,35 @@ def get_dom_color(img):
         else:
             white += 1
     
-    if black > white:
-        return '#'
+    s = len(all_pixels)
+    
+    s //= 5
+    
+    if white < s:
+        return u'█'
+    if white < s * 2:
+        return u'▓'
+    if white < s * 3:
+        return u'▒'
+    if white < s * 4:
+        return u'░'
     else:
         return ' '
+        
+    # ░▒▓█
 
 count = 0
 
-f = open('data.txt', 'w')
+f = open('data.txt', 'w', encoding='utf8')
 
-for i in range(2191):
+widht = 480 / 174
+height = 360 / 55
+
+for i in range(len(os.listdir("image"))):
     filename = f"frame_{i}.jpg"
     print(filename)
-    frame = crop(f'image/{filename}', 3.26, 8.2)
+    frame = crop(f'image/{filename}', widht, height)
     for c in frame:
         f.write(c)
     f.write(str(2))
-    print(count)
     count += 1

@@ -4,7 +4,7 @@ import imageio
 from PIL import Image
 
 
-reader = imageio.get_reader('video.mp4')
+reader = imageio.get_reader('video3.mp4')
 
 for filename in os.listdir('image'):
     os.remove('image/' + filename)
