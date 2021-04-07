@@ -13,3 +13,12 @@
 5. далее запускаем любой текстовый редактор, я рекоменду [vscode](https://code.visualstudio.com/), открываем файл screen.txt и запускаем **python screendraw.py**
 
 6. наслаждаемся
+
+## Зависимости
+
+Незабудьте установить [python](https://www.python.org/)
+
+А также прописать
+
+- pip install Pillow
+- pip install imageio

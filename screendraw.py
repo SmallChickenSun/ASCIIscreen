@@ -1,7 +1,5 @@
 import time
 import os
-import json
-from playsound import playsound
 
 from PIL import Image
 
