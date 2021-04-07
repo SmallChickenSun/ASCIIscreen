@@ -9,7 +9,7 @@ reader = imageio.get_reader(sys.argv[1])
 
 for filename in os.listdir('image'):
     os.remove('image/' + filename)
-    
+
 count = 0
 
 for frame_number, im in enumerate(reader):

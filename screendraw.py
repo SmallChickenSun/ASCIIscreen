@@ -10,13 +10,15 @@ if len(sys.argv) == 1:
     f = open('data.txt', 'r', encoding='utf8')
 else:
     f = open(sys.argv[1], 'r', encoding='utf8')
-    
+
 
 frames = []
 frame_num = 0
 
+
 def clear_screen():
     return open('screen.txt', 'w', encoding='utf8')
+
 
 def draw_frame(num):
     screen = clear_screen()
@@ -48,6 +50,6 @@ print("START!")
 while frame_num != len(os.listdir('image')):
     draw_frame(frame_num)
     frame_num += 1
-    time.sleep(1/11)
-    
+    time.sleep(1 / 11)
+
 print("Done!")

@@ -24,13 +24,13 @@ def get_dom_color(img):
 
     all_pixels = []
     for x in range(width):
-        for y in range(height):            
+        for y in range(height):
             cpixel = pixels[x, y]
             if cpixel > 127:
                 all_pixels.append(255)
             else:
                 all_pixels.append(0)
-    
+
     black = 0
     white = 0
     for pixel in all_pixels:
@@ -38,11 +38,11 @@ def get_dom_color(img):
             black += 1
         else:
             white += 1
-    
+
     s = len(all_pixels)
-    
+
     s //= 5
-    
+
     if white < s:
         return u'█'
     if white < s * 2:
@@ -53,8 +53,9 @@ def get_dom_color(img):
         return u'░'
     else:
         return ' '
-        
+
     # ░▒▓█
+
 
 count = 0
 
@@ -62,7 +63,6 @@ if len(sys.argv) == 1:
     f = open('data.txt', 'w', encoding='utf8')
 else:
     f = open(sys.argv[1], 'w', encoding='utf8')
-    
 
 
 img_width, img_height = Image.open('image/frame_0.jpg').size
