@@ -73,3 +73,5 @@ for i in range(len(os.listdir("image"))):
         f.write(c)
     f.write(str(2))
     count += 1
+
+print("Done!")

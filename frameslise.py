@@ -22,3 +22,5 @@ for filename in os.listdir('image'):
     image_file = Image.open(f'image/{filename}')
     image_file = image_file.convert('1')
     image_file.save(f'image/{filename}')
+
+print("Done!")

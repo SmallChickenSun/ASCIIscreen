@@ -38,8 +38,11 @@ print(2)
 time.sleep(1)
 print(1)
 
+print("START!")
 
 while frame_num != len(os.listdir('image')):
     draw_frame(frame_num)
     frame_num += 1
     time.sleep(1/11)
+    
+print("Done!")
