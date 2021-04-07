@@ -1,11 +1,16 @@
 import time
 import os
+import sys
 
 from PIL import Image
 
 
 screen = open('screen.txt', 'w', encoding='utf8')
-f = open('data.txt', 'r', encoding='utf8')
+if len(sys.argv) == 1:
+    f = open('data.txt', 'r', encoding='utf8')
+else:
+    f = open(sys.argv[1], 'r', encoding='utf8')
+    
 
 frames = []
 frame_num = 0

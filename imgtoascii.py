@@ -1,6 +1,6 @@
 import time
 import os
-import json
+import sys
 
 from PIL import Image
 
@@ -58,7 +58,12 @@ def get_dom_color(img):
 
 count = 0
 
-f = open('data.txt', 'w', encoding='utf8')
+if len(sys.argv) == 1:
+    f = open('data.txt', 'w', encoding='utf8')
+else:
+    f = open(sys.argv[1], 'w', encoding='utf8')
+    
+
 
 img_width, img_height = Image.open('image/frame_0.jpg').size
 
